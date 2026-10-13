@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17172b">
+<title>UPF (Unified Power Format) | Verilog Codes</title>
+<meta name="description" content="Learn UPF power intent, power domains, supply nets, level shifters and isolation with visual examples and Tcl commands.">
+<style>
+:root{--navy:#17172b;--navy2:#24223e;--ink:#20243a;--muted:#687187;--paper:#fbf8f0;--line:#e8e3d7;--gold:#ffd34f;--blue:#a9c9f5;--green:#bdeaa7;--red:#f8b7b7}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1320px,calc(100% - 32px));margin:auto}
+header{background:var(--navy);color:#fff}.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.brand{font-size:19px;font-weight:800}.links{display:flex;gap:19px;align-items:center;flex-wrap:wrap;color:#d1dbea;font-size:14px}.links a:hover,.links .active{color:var(--gold)}.hero{padding:30px 0 22px;background:linear-gradient(110deg,#f7f2e3,#eef4ff)}.eyebrow{margin:0 0 5px;color:#8b6500;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}h1{margin:0;font-size:clamp(28px,4vw,43px);letter-spacing:-1px} .intro{color:var(--muted);margin:7px 0 0;font-size:16px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:12px 0 15px;position:sticky;top:0;background:var(--paper);z-index:4}.tabs a{white-space:nowrap;border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:#fff;font-size:13px;font-weight:700}.tabs a:hover{border-color:#d8b23b;background:#fff7d8}
+.case{margin:0 0 15px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 3px 12px #17172b08}.case-title{margin:0;padding:9px 13px;font-size:18px;line-height:1.3;color:#10182b}.blue{background:#b7d8ff}.green{background:#d1f1bd}.yellow{background:#ffeaa0}.panels{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:10px;padding:10px}.panel{min-width:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}.panel h3{margin:0;padding:7px 10px;background:#f5f7fb;font-size:15px}.diagram{padding:14px;min-height:230px;display:flex;align-items:center;justify-content:center;background:#fff}.topbox{width:88%;border:2px solid #1c2534;border-radius:5px;padding:12px;background:#edf5ff;text-align:center}.topname{font-size:20px;font-weight:800}.modules{display:flex;justify-content:space-around;gap:16px;margin:16px 0 6px}.module{padding:13px 8px;min-width:34%;border:2px solid #20243a;border-radius:4px;text-align:center;font-weight:700}.module small{display:block;font-weight:600;font-size:14px}.moda{background:#ffe0e0}.modb{background:#e1f8d8}.rail{display:flex;justify-content:space-around;align-items:center;font-weight:800;margin-top:4px}.rail span:first-child{color:#c61c1c}.rail span:last-child{color:#19752b}.ground{text-align:center;font-weight:700;margin-top:8px}.code{margin:0;padding:12px;background:#fff;color:#18202e;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow:auto;max-height:360px}.comment{color:#28743c}.subtle{padding:0 12px 12px;color:var(--muted);font-size:12px}
+.split-domains{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px}.domain{border:2px dashed;border-radius:5px;padding:12px;text-align:center}.domain.a{background:#fff0f0;border-color:#e44}.domain.b{background:#f0ffeb;border-color:#36a64a}.powerctl{display:inline-block;padding:7px;border:1px solid #758096;border-radius:5px;background:#fff;font-size:12px;font-weight:700;margin-top:8px}.signal{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px}.signal .module{min-width:115px}.shift{padding:15px 17px;border:2px solid #5276a8;background:#dcecff;border-radius:5px;font-weight:800;text-align:center}.arrow{font-size:24px;font-weight:800}
+.callout{margin:14px 0 28px;border-left:4px solid #d6a51c;background:#fff5d8;padding:13px 15px;border-radius:0 8px 8px 0;color:#5c5136;font-size:13px}.section-head{margin:22px 0 10px;font-size:23px}.refgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px}.ref{padding:15px;border:1px solid var(--line);border-radius:10px;background:#fff}.ref h3{margin:0 0 5px;font-size:15px}.ref p{margin:0;color:var(--muted);font-size:13px}
+footer{margin-top:30px;padding:22px 0;background:var(--navy);color:#c3ccdc;font-size:13px}
+@media(max-width:760px){.panels{grid-template-columns:1fr}.diagram{min-height:200px}.refgrid{grid-template-columns:1fr}.nav{padding:12px 0}.links{gap:12px}.case-title{font-size:16px}.code{font-size:11px}.tabs{top:0}}
+</style></head>
+<body>
+<header><nav class="nav wrap"><a class="brand" href="../index.html">TMSY Tutorials · Verilog Codes</a><div class="links"><a href="../index.html">Home</a><a href="../simulations/">Circuit Lab</a><a href="../learn/">Learning Labs</a><a class="active" href="./">UPF (Low Power)</a><a href="https://github.com/T-Maharshi-Sanand-Yadav/Verilog_Codes" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
+<section class="hero"><div class="wrap"><p class="eyebrow">Synthesis · Low-Power Design · Tcl</p><h1>UPF (Unified Power Format)</h1><p class="intro">Learn power intent with domain diagrams, voltage-aware signal handling, and annotated UPF Tcl examples.</p></div></section>
+<main class="wrap">
+<nav class="tabs" aria-label="UPF topics"><a href="#intro">Introduction</a><a href="#case1">Power Domains</a><a href="#supplies">Supply Ports/Nets</a><a href="#level-shifter">Level Shifters</a><a href="#isolation">Isolation</a><a href="#checklist">Implementation notes</a></nav>
+<section id="intro" class="callout"><strong>Important:</strong> UPF syntax and supported options vary by IEEE 1801 revision and EDA tool. Treat these as teaching templates and check your tool's UPF reference before using them in a production flow. A power domain is a logical power-intent grouping; different voltage rails do not automatically require separate power domains.</section>
+<section class="case" id="case1"><h2 class="case-title blue">Case 1: One power domain with two voltage domains (1 V and 2 V)</h2><div class="panels">
+<div class="panel"><h3>Block diagram</h3><div class="diagram"><div class="topbox"><div class="topname">TOP</div><strong>Power Domain: PD_TOP</strong><br><span>(single power control)</span><div class="modules"><div class="module moda">Module A<small>1.0 V</small></div><div class="module modb">Module B<small>2.0 V</small></div></div></div></div><div class="rail"><span>VDD1 · 1.0 V</span><span>VDD2 · 2.0 V</span></div><div class="ground">VSS (GND)</div></div>
+<div class="panel" id="supplies"><h3>UPF commands (Tcl)</h3><pre class="code"><span class="comment"># Case 1: one top-level power domain</span>
+create_power_domain PD_TOP -include_scope
+
+<span class="comment"># Create supply ports</span>
+create_supply_port VDD1
+create_supply_port VDD2
+create_supply_port VSS
+
+<span class="comment"># Create supply nets</span>
+create_supply_net VDD1
+create_supply_net VDD2
+create_supply_net VSS
+
+<span class="comment"># Connect supply ports to supply nets</span>
+connect_supply_net VDD1 -ports VDD1
+connect_supply_net VDD2 -ports VDD2
+connect_supply_net VSS  -ports VSS</pre></div></div></section>
+<section class="case" id="case2"><h2 class="case-title green">Case 2: Separate power domains with independent power control</h2><div class="panels"><div class="panel"><h3>Block diagram</h3><div class="diagram"><div class="split-domains"><div class="domain a"><strong>Power Domain: PD_A</strong><br>1.0 V<div class="module moda">Module A</div><div class="powerctl">Power Control A</div></div><div class="domain b"><strong>Power Domain: PD_B</strong><br>2.0 V<div class="module modb">Module B</div><div class="powerctl">Power Control B</div></div></div></div><div class="rail"><span>VDD1 · 1.0 V</span><span>VDD2 · 2.0 V</span></div><div class="ground">Common ground: VSS</div></div>
+<div class="panel"><h3>UPF commands (Tcl)</h3><pre class="code"><span class="comment"># Create power domains for A and B</span>
+create_power_domain PD_A -elements {A}
+create_power_domain PD_B -elements {B}
+
+<span class="comment"># Create and connect supply ports/nets</span>
+create_supply_port VDD1
+create_supply_port VDD2
+create_supply_port VSS
+create_supply_net VDD1
+create_supply_net VDD2
+create_supply_net VSS
+connect_supply_net VDD1 -ports VDD1
+connect_supply_net VDD2 -ports VDD2
+connect_supply_net VSS  -ports VSS
+
+<span class="comment"># Assign primary supplies to each domain</span>
+set_domain_supply_net PD_A -primary_power_net VDD1 \
+    -primary_ground_net VSS
+set_domain_supply_net PD_B -primary_power_net VDD2 \
+    -primary_ground_net VSS</pre></div></div></section>
+<section class="case" id="level-shifter"><h2 class="case-title yellow">Inter-domain signal handling: level shifter and isolation</h2><div class="panels"><div class="panel"><h3>Block diagram · A → B signal</h3><div class="diagram"><div class="signal"><div class="module moda">Module A<small>1.0 V · PD_A</small></div><span class="arrow">→</span><div class="shift">Level<br>Shifter</div><span class="arrow">→</span><div class="module modb">Module B<small>2.0 V · PD_B</small></div></div></div><p class="subtle">A low-to-high crossing translates a 1.0 V signal to a level suitable for the 2.0 V receiving domain.</p></div>
+<div class="panel"><h3>UPF commands (Tcl)</h3><pre class="code"><span class="comment"># Insert level shifters for PD_A → PD_B</span>
+set_level_shifter LS_A_TO_B \
+    -domain PD_A \
+    -elements {A/*} \
+    -applies_to outputs \
+    -location self \
+    -rule low_to_high
+
+<span class="comment"># Insert isolation on outputs of PD_A</span>
+set_isolation ISO_A \
+    -domain PD_A \
+    -applies_to outputs \
+    -clamp_value 0 \
+    -isolation_signal iso_en \
+    -isolation_sense high \
+    -location parent \
+    -elements {A/*}</pre></div></div></section>
+<section class="case" id="isolation"><h2 class="case-title blue">What each low-power cell does</h2><div class="panels"><div class="panel"><h3>Level shifter</h3><div style="padding:15px"><strong>Voltage translation</strong><p>Used when a signal crosses between voltage domains that are not directly compatible. Direction and voltage range must match the library cell and tool rule.</p></div></div><div class="panel"><h3>Isolation cell</h3><div style="padding:15px"><strong>Safe output while a domain is off</strong><p>Clamps signals to a defined value when the source domain is powered down, preventing unknown or invalid values from propagating.</p></div></div></div></section>
+<h2 class="section-head" id="checklist">Implementation checklist</h2><div class="refgrid"><article class="ref"><h3>1. Confirm the UPF version</h3><p>Choose the IEEE 1801 revision supported by your synthesis and implementation tools.</p></article><article class="ref"><h3>2. Check library support</h3><p>Verify available level shifters, isolation cells, legal voltage ranges, and cell mapping rules.</p></article><article class="ref"><h3>3. Validate the intent</h3><p>Run the tool's UPF consistency checks and review generated reports before synthesis or place-and-route.</p></article></div>
+<div class="callout"><strong>Design reminder:</strong> If A and B can be powered down independently, separate power domains are usually the more useful model. If they share one power switch but operate at different voltages, model the voltage areas and supply connectivity according to the implementation methodology and tool support.</div>
+</main><footer><div class="wrap">Verilog Codes · UPF learning guide · Examples are educational templates</div></footer>
+</body></html>
