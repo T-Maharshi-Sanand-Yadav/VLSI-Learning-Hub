@@ -96,6 +96,29 @@ body{background:#fff;color:#17233b}
 .social a:hover{border-color:#1b6de0;color:#1b6de0}
 footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 @media(max-width:600px){.nav{align-items:stretch}.navlinks{padding-bottom:6px}.hero{padding:50px 0 64px}.hero-grid{gap:38px}}
+
+/* Social media carousel */
+.social-showcase{padding:44px 0 48px;background:linear-gradient(180deg,#fffdf8,#f5f0e5);border-bottom:1px solid #e8e3d7;overflow:hidden}
+.social-showcase .section-head{margin-bottom:20px}
+.social-showcase .section-head h2{font-size:clamp(1.55rem,2.7vw,2.15rem)}
+.social-track-window{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.social-track{display:flex;width:max-content;gap:16px;animation:social-marquee 42s linear infinite;padding:5px 0 15px}
+.social-track-window:hover .social-track,.social-track-window:focus-within .social-track{animation-play-state:paused}
+.social-card{display:block;position:relative;flex:0 0 270px;min-height:205px;overflow:hidden;border-radius:17px;border:1px solid #ffffff70;color:#fff;box-shadow:0 9px 24px #20243a16;transition:transform .2s}
+.social-card:hover{transform:translateY(-4px)}
+.social-art{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:19px;background:radial-gradient(circle at 85% 15%,#ffffff25,transparent 35%),linear-gradient(135deg,#17172b,#37315b)}
+.social-card.youtube .social-art{background:radial-gradient(circle at 85% 15%,#ffb2a933,transparent 34%),linear-gradient(135deg,#221b2c,#9f2637)}
+.social-card.instagram .social-art{background:radial-gradient(circle at 15% 95%,#ffd34f60,transparent 36%),linear-gradient(135deg,#542b78,#d04467 58%,#f4a340)}
+.social-brand{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.social-symbol{display:grid;place-items:center;width:36px;height:36px;border:1px solid #ffffff55;border-radius:11px;background:#ffffff18;font-size:1.15rem}
+.social-card h3{position:relative;margin:17px 0 7px;font-size:1.25rem;line-height:1.15;max-width:230px}
+.social-card p{position:relative;margin:0;color:#ffffffd9;font-size:.84rem;line-height:1.5;max-width:230px}
+.social-card .social-open{position:relative;display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:.8rem;font-weight:800}
+.social-showcase .social-note{margin:7px 0 0;color:#687187;font-size:.78rem;line-height:1.5}
+@keyframes social-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.social-track{animation:none;flex-wrap:wrap;width:auto}.social-track-window{mask-image:none}.social-card{flex-basis:calc(33.333% - 12px)}}
+@media(max-width:650px){.social-showcase{padding:35px 0}.social-card{flex-basis:235px;min-height:190px}.social-track{gap:12px;animation-duration:34s}}
+
 </style>
 <link rel="stylesheet" href="academic.css?v=20261021">
 <style>
@@ -137,6 +160,56 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
   <span class="kw">end</span>
 <span class="kw">endmodule</span></div></div><div class="wave-card"><div class="wave-title"><span>Digital timing · concept</span><b>CLK / Q</b></div><svg viewBox="0 0 300 76" role="img" aria-label="Illustrative clock and output waveforms"><path d="M0 13 H20 V3 H50 V13 H80 V3 H110 V13 H140 V3 H170 V13 H200 V3 H230 V13 H260 V3 H290 V13" fill="none" stroke="#56b9f5" stroke-width="2.3" stroke-linejoin="round"/><path d="M0 48 H50 V38 H110 V48 H170 V38 H230 V48 H290" fill="none" stroke="#43e0c0" stroke-width="2.3" stroke-linejoin="round"/><g fill="#9fb0c8" font-size="9"><text x="3" y="28">CLK</text><text x="3" y="63">Q</text></g></svg></div></div></div></section>
 <section class="stats-band"><div class="wrap stats"><div class="stat"><strong>RTL</strong><span>Verilog &amp; digital design</span></div><div class="stat"><strong>STA</strong><span>Constraints &amp; timing analysis</span></div><div class="stat"><strong>EDA</strong><span>Synthesis &amp; cell characterization</span></div></div></section>
+<section class="social-showcase" aria-labelledby="social-showcase-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="kicker">FOLLOW THE LATEST</p><h2 id="social-showcase-title">VLSI learning, wherever you scroll.</h2></div>
+      <p>Follow the channel for tutorials and Instagram for quick updates from the VLSI learning community.</p>
+    </div>
+  </div>
+  <div class="social-track-window" aria-label="Automatically scrolling social media highlights. Hover or focus to pause.">
+    <div class="social-track">
+      <a class="social-card youtube" href="https://www.youtube.com/@maharshisanandyadav" target="_blank" rel="noopener noreferrer" aria-label="Visit T Maharshi Sanand Yadav on YouTube">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">▶</span>YouTube · Tutorials</div><div><h3>Verilog HDL &amp; RTL Design</h3><p>Practical code walkthroughs and digital design concepts.</p><span class="social-open">Watch on YouTube ↗</span></div></div>
+      </a>
+      <a class="social-card instagram" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer" aria-label="Visit VLSI TMSY Tutorials on Instagram">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">◎</span>Instagram · Updates</div><div><h3>VLSI tips in your feed</h3><p>Short learning highlights, career notes and community updates.</p><span class="social-open">View Instagram ↗</span></div></div>
+      </a>
+      <a class="social-card youtube" href="https://www.youtube.com/@maharshisanandyadav" target="_blank" rel="noopener noreferrer" aria-label="Explore Synthesis and STA tutorials on YouTube">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">▶</span>YouTube · VLSI</div><div><h3>Synthesis &amp; Static Timing</h3><p>Build your understanding of constraints, timing paths and slack.</p><span class="social-open">Explore videos ↗</span></div></div>
+      </a>
+      <a class="social-card instagram" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer" aria-label="Explore VLSI learning posts on Instagram">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">◎</span>Instagram · VLSI</div><div><h3>From RTL to implementation</h3><p>Stay connected with practical VLSI learning content.</p><span class="social-open">See posts ↗</span></div></div>
+      </a>
+      <a class="social-card youtube" href="https://www.youtube.com/@maharshisanandyadav" target="_blank" rel="noopener noreferrer" aria-label="Explore standard-cell characterization tutorials on YouTube">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">▶</span>YouTube · Deep dives</div><div><h3>Standard-Cell Characterization</h3><p>Learn timing arcs, Liberty concepts and characterization basics.</p><span class="social-open">Watch tutorials ↗</span></div></div>
+      </a>
+      <a class="social-card instagram" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer" aria-label="Follow VLSI TMSY Tutorials on Instagram">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">◎</span>Instagram · Community</div><div><h3>Learn. Build. Grow.</h3><p>Follow along for more VLSI ideas and learning updates.</p><span class="social-open">Follow the page ↗</span></div></div>
+      </a>
+      <!-- Duplicate cards create a seamless continuous loop. -->
+      <a class="social-card youtube" href="https://www.youtube.com/@maharshisanandyadav" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">▶</span>YouTube · Tutorials</div><div><h3>Verilog HDL &amp; RTL Design</h3><p>Practical code walkthroughs and digital design concepts.</p><span class="social-open">Watch on YouTube ↗</span></div></div>
+      </a>
+      <a class="social-card instagram" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">◎</span>Instagram · Updates</div><div><h3>VLSI tips in your feed</h3><p>Short learning highlights, career notes and community updates.</p><span class="social-open">View Instagram ↗</span></div></div>
+      </a>
+      <a class="social-card youtube" href="https://www.youtube.com/@maharshisanandyadav" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">▶</span>YouTube · VLSI</div><div><h3>Synthesis &amp; Static Timing</h3><p>Build your understanding of constraints, timing paths and slack.</p><span class="social-open">Explore videos ↗</span></div></div>
+      </a>
+      <a class="social-card instagram" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">◎</span>Instagram · VLSI</div><div><h3>From RTL to implementation</h3><p>Stay connected with practical VLSI learning content.</p><span class="social-open">See posts ↗</span></div></div>
+      </a>
+      <a class="social-card youtube" href="https://www.youtube.com/@maharshisanandyadav" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">▶</span>YouTube · Deep dives</div><div><h3>Standard-Cell Characterization</h3><p>Learn timing arcs, Liberty concepts and characterization basics.</p><span class="social-open">Watch tutorials ↗</span></div></div>
+      </a>
+      <a class="social-card instagram" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+        <div class="social-art"><div class="social-brand"><span class="social-symbol">◎</span>Instagram · Community</div><div><h3>Learn. Build. Grow.</h3><p>Follow along for more VLSI ideas and learning updates.</p><span class="social-open">Follow the page ↗</span></div></div>
+      </a>
+    </div>
+  </div>
+  <div class="wrap"><p class="social-note">These are linked social highlights rather than a live feed; opening a card takes you to your YouTube channel or Instagram profile.</p></div>
+</section>
 <section class="section" id="learn"><div class="wrap"><div class="section-head"><div><p class="kicker">LEARNING &amp; CAREER RESOURCES</p><h2>Explore VLSI learning paths</h2></div><p>Build practical skills in digital implementation and library characterization, from foundational concepts to industry-relevant timing and low-power topics.</p></div><div class="feature-grid">
 <article class="feature"><div class="feature-icon">▤</div><h3>Free VLSI Tutorials</h3><p>Browse Verilog HDL examples, RTL source files, testbenches, and guided digital-design learning resources.</p><a href="learn/">Explore free tutorials <span>→</span></a></article>
 <article class="feature"><div class="feature-icon">⌁</div><h3>Synthesis &amp; Static Timing Analysis</h3><p>Learn synthesis flow, SDC constraints, setup and hold checks, slack, timing reports, and practical STA concepts.</p><a href="sta/">Explore Synthesis &amp; STA <span>→</span></a></article>
