@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://t-maharshi-sanand-yadav.github.io/Verilog_Codes/sitemap.xml
