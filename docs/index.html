@@ -157,6 +157,24 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 @media(max-width:760px){.social-showcase{padding:42px 0}.social-hub-grid{grid-template-columns:1fr}.hub-description{min-height:0}.video-preview-art{min-height:155px}.insta-tile{min-height:150px}}
 @media(max-width:390px){.social-hub-card{padding:16px}.hub-platform{display:none}.instagram-preview-grid{gap:6px}.insta-tile{padding:10px;min-height:130px}}
 
+
+/* Real YouTube thumbnails and Instagram post embed */
+.real-content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.real-video-list{display:grid;gap:12px;margin-top:20px}
+.real-video{display:grid;grid-template-columns:minmax(120px,42%) minmax(0,1fr);gap:13px;align-items:center;padding:10px;border:1px solid #e8e3d7;border-radius:13px;background:#fff;transition:border-color .2s,transform .2s}
+.real-video:hover{border-color:#d9b94b;transform:translateY(-2px)}
+.real-video-thumb{position:relative;display:block;overflow:hidden;aspect-ratio:16/9;border-radius:8px;background:#17172b}
+.real-video-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.thumb-play{position:absolute;left:50%;top:50%;display:grid;place-items:center;width:36px;height:27px;transform:translate(-50%,-50%);border-radius:8px;background:#c92335;color:#fff;font-size:.8rem;box-shadow:0 2px 10px #0004}
+.real-video-copy{min-width:0;display:flex;flex-direction:column;gap:6px}
+.real-video-copy strong{font:700 .95rem/1.3 "Space Grotesk",sans-serif;color:#20243a}
+.real-video-copy small{font-size:.76rem;line-height:1.45;color:#687187}
+.watch-link{font-size:.76rem;font-weight:800;color:#b61f32}
+.instagram-embed-wrap{margin-top:16px;display:flex;justify-content:center;overflow:hidden;border:1px solid #e8e3d7;border-radius:13px;background:#fff;min-height:360px}
+.instagram-embed-wrap iframe{display:block;width:100%;max-width:420px;height:500px;border:0;background:#fff}
+@media(max-width:760px){.real-content-grid{grid-template-columns:1fr}.instagram-embed-wrap iframe{max-width:100%}}
+@media(max-width:410px){.real-video{grid-template-columns:1fr}.real-video-thumb{aspect-ratio:16/9}.instagram-embed-wrap{min-height:300px}.instagram-embed-wrap iframe{height:420px}}
+
 </style>
 <link rel="stylesheet" href="academic.css?v=20261021">
 <style>
@@ -202,44 +220,43 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
   <div class="wrap">
     <div class="section-head social-heading">
       <div><p class="kicker">FOLLOW · WATCH · LEARN</p><h2 id="social-showcase-title">Fresh VLSI learning from TMSY.</h2></div>
-      <p>Explore tutorials on YouTube and quick updates on Instagram—all in one place.</p>
+      <p>Watch real tutorials from your YouTube channel and explore your Instagram VLSI posts.</p>
     </div>
 
-    <div class="social-hub-grid">
+    <div class="real-content-grid">
       <article class="social-hub-card youtube-hub">
         <div class="hub-card-top">
           <span class="hub-icon" aria-hidden="true">▶</span>
-          <div><span class="hub-eyebrow">WATCH &amp; LEARN</span><h3>YouTube Tutorials</h3></div>
+          <div><span class="hub-eyebrow">WATCH ON YOUTUBE</span><h3>Featured VLSI Tutorials</h3></div>
           <span class="hub-platform">YouTube</span>
         </div>
-        <p class="hub-description">Explore Verilog HDL, Synthesis &amp; STA, Standard-Cell Characterization and practical VLSI tutorials from the channel.</p>
-        <div class="video-preview">
-          <div class="video-preview-art">
-            <span class="video-play" aria-hidden="true">▶</span>
-            <span class="video-label">VLSI · PRACTICAL LEARNING</span>
-            <strong>Build your VLSI skills<br>one lesson at a time.</strong>
-          </div>
-          <div class="video-preview-footer"><span>Browse channel videos</span><span aria-hidden="true">↗</span></div>
+        <div class="real-video-list">
+          <a class="real-video" href="https://www.youtube.com/watch?v=UK_u0TtK92k" target="_blank" rel="noopener noreferrer">
+            <span class="real-video-thumb"><img src="https://i.ytimg.com/vi/UK_u0TtK92k/hqdefault.jpg" alt="Video thumbnail: Elaboration and Design Objects in VLSI" loading="lazy"><span class="thumb-play" aria-hidden="true">▶</span></span>
+            <span class="real-video-copy"><strong>Elaboration &amp; Design Objects</strong><small>Cadence Genus and Design Compiler concepts</small><span class="watch-link">Watch video ↗</span></span>
+          </a>
+          <a class="real-video" href="https://www.youtube.com/watch?v=K1kQ5LNH2PA" target="_blank" rel="noopener noreferrer">
+            <span class="real-video-thumb"><img src="https://i.ytimg.com/vi/K1kQ5LNH2PA/hqdefault.jpg" alt="Video thumbnail: Retiming Optimization in RTL Synthesis" loading="lazy"><span class="thumb-play" aria-hidden="true">▶</span></span>
+            <span class="real-video-copy"><strong>Retiming Optimization in RTL Synthesis</strong><small>Timing closure and synthesis optimization</small><span class="watch-link">Watch video ↗</span></span>
+          </a>
         </div>
-        <a class="hub-button youtube-button" href="https://www.youtube.com/@maharshisanandyadav/videos" target="_blank" rel="noopener noreferrer">Explore YouTube Videos <span aria-hidden="true">↗</span></a>
+        <a class="hub-button youtube-button" href="https://www.youtube.com/@maharshisanandyadav/videos" target="_blank" rel="noopener noreferrer">Browse All YouTube Videos <span aria-hidden="true">↗</span></a>
       </article>
 
       <article class="social-hub-card instagram-hub">
         <div class="hub-card-top">
           <span class="hub-icon" aria-hidden="true">◎</span>
-          <div><span class="hub-eyebrow">QUICK UPDATES</span><h3>Instagram Community</h3></div>
+          <div><span class="hub-eyebrow">REAL INSTAGRAM CONTENT</span><h3>VLSI Posts &amp; Reels</h3></div>
           <span class="hub-platform">Instagram</span>
         </div>
-        <p class="hub-description">Stay connected for VLSI learning highlights, career guidance and updates from TMSY Tutorials.</p>
-        <div class="instagram-preview-grid" aria-label="Instagram profile preview">
-          <div class="insta-tile tile-one"><span>RTL</span><strong>Verilog<br>HDL</strong></div>
-          <div class="insta-tile tile-two"><span>STA</span><strong>Timing<br>Insights</strong></div>
-          <div class="insta-tile tile-three"><span>VLSI</span><strong>Career<br>Growth</strong></div>
+        <p class="hub-description">A real post from @vlsi.tmsy.tutorials featuring Synthesis and STA interview topics.</p>
+        <div class="instagram-embed-wrap">
+          <iframe src="https://www.instagram.com/p/DPlm1xykwFH/embed" title="Instagram post from VLSI.TMSY.TUTORIALS about Synthesis and STA interview questions" loading="lazy" allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
-        <a class="hub-button instagram-button" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer">Visit Instagram Profile <span aria-hidden="true">↗</span></a>
+        <a class="hub-button instagram-button" href="https://www.instagram.com/vlsi.tmsy.tutorials/" target="_blank" rel="noopener noreferrer">Explore Instagram Profile <span aria-hidden="true">↗</span></a>
       </article>
     </div>
-    <p class="social-note">The cards link directly to your public profiles. Preview artwork is illustrative; it does not represent specific uploaded videos or Instagram posts.</p>
+    <p class="social-note">YouTube thumbnails are loaded from the actual video IDs. Instagram embeds depend on Instagram availability, privacy settings and browser cookie restrictions; use the profile link if the embed does not load.</p>
   </div>
 </section>
 <section class="section" id="learn"><div class="wrap"><div class="section-head"><div><p class="kicker">LEARNING &amp; CAREER RESOURCES</p><h2>Explore VLSI learning paths</h2></div><p>Build practical skills in digital implementation and library characterization, from foundational concepts to industry-relevant timing and low-power topics.</p></div><div class="feature-grid">
