@@ -193,6 +193,12 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 .playlist-info>a{display:inline-block;margin-top:13px;color:#946000;font-size:.82rem;font-weight:800}
 @media(max-width:650px){.playlist-grid{grid-template-columns:1fr}.playlist-heading{align-items:flex-start;flex-direction:column}.playlist-info{padding:15px}}
 
+
+/* Keep the hero band minimal after removing promotional and demo content */
+.hero-compact{padding:0;min-height:0;height:0;overflow:hidden;border:0;background:var(--navy)}
+.hero-compact:after{display:none}
+.hero-compact-inner{display:none}
+
 </style>
 <link rel="stylesheet" href="academic.css?v=20261021">
 <style>
@@ -221,18 +227,7 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 <a href="https://github.com/T-Maharshi-Sanand-Yadav/VLSI-Learning-Hub" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub ↗</a>
 </div></nav></header>
 <main>
-<section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><div class="actions"><a class="btn btn-main" href="#learn">Explore Learning Paths <span>→</span></a><a class="btn btn-outline" href="training/">Explore Training ↗</a></div><div class="hero-foot"><span><i class="dot"></i> Learn with practical examples</span><span><i class="dot"></i> RTL to timing concepts</span><span><i class="dot"></i> Free learning resources</span></div></div><div class="visual"><div class="code-card"><div class="code-top"><span>counter.v</span><span class="lights"><i></i><i></i><i></i></span></div><div class="code-body"><span class="comment">// 4-bit up counter with async reset</span>
-<span class="kw">module</span> counter4(
-  <span class="kw">input</span> clk, reset,
-  <span class="kw">output reg</span> [3:0] count
-);
-  <span class="kw">always</span> @(<span class="fn">posedge</span> clk <span class="kw">or</span> <span class="fn">posedge</span> reset) begin
-    <span class="kw">if</span> (reset)
-      count &lt;= <span class="num">4'b0000</span>;
-    <span class="kw">else</span>
-      count &lt;= count + <span class="num">1'b1</span>;
-  <span class="kw">end</span>
-<span class="kw">endmodule</span></div></div><div class="wave-card"><div class="wave-title"><span>Digital timing · concept</span><b>CLK / Q</b></div><svg viewBox="0 0 300 76" role="img" aria-label="Illustrative clock and output waveforms"><path d="M0 13 H20 V3 H50 V13 H80 V3 H110 V13 H140 V3 H170 V13 H200 V3 H230 V13 H260 V3 H290 V13" fill="none" stroke="#56b9f5" stroke-width="2.3" stroke-linejoin="round"/><path d="M0 48 H50 V38 H110 V48 H170 V38 H230 V48 H290" fill="none" stroke="#43e0c0" stroke-width="2.3" stroke-linejoin="round"/><g fill="#9fb0c8" font-size="9"><text x="3" y="28">CLK</text><text x="3" y="63">Q</text></g></svg></div></div></div></section>
+<section class="hero hero-compact"><div class="wrap hero-compact-inner"></div></section>
 <section class="stats-band"><div class="wrap stats"><div class="stat"><strong>RTL</strong><span>Verilog &amp; digital design</span></div><div class="stat"><strong>STA</strong><span>Constraints &amp; timing analysis</span></div><div class="stat"><strong>EDA</strong><span>Synthesis &amp; cell characterization</span></div></div></section>
 <section class="social-showcase" aria-labelledby="social-showcase-title">
   <div class="wrap">
