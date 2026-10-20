@@ -199,6 +199,14 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 .hero-compact:after{display:none}
 .hero-compact-inner{display:none}
 
+
+/* Updated homepage expertise categories */
+.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.stat{flex-direction:column;align-items:center;gap:7px;text-align:center;padding:5px 8px}
+.stat strong{font-size:clamp(1rem,1.7vw,1.25rem);line-height:1.25}
+.stat span{max-width:250px;font-size:.82rem;line-height:1.45}
+@media(max-width:600px){.stats{grid-template-columns:1fr;gap:15px}.stat{padding:8px}.stat strong{font-size:1.08rem}.stat span{max-width:100%;font-size:.8rem}}
+
 </style>
 <link rel="stylesheet" href="academic.css?v=20261021">
 <style>
@@ -228,7 +236,7 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 </div></nav></header>
 <main>
 <section class="hero hero-compact"><div class="wrap hero-compact-inner"></div></section>
-<section class="stats-band"><div class="wrap stats"><div class="stat"><strong>RTL</strong><span>Verilog &amp; digital design</span></div><div class="stat"><strong>STA</strong><span>Constraints &amp; timing analysis</span></div><div class="stat"><strong>EDA</strong><span>Synthesis &amp; cell characterization</span></div></div></section>
+<section class="stats-band"><div class="wrap stats"><div class="stat"><strong>Verilog HDL</strong><span>RTL Design &amp; Functional Verification</span></div><div class="stat"><strong>Synthesis &amp; STA</strong><span>Logic Synthesis, SDC &amp; Timing Closure</span></div><div class="stat"><strong>Standard-Cell Characterization</strong><span>Cadence Liberate, Timing Arcs &amp; Liberty Models</span></div></div></section>
 <section class="social-showcase" aria-labelledby="social-showcase-title">
   <div class="wrap">
     <div class="section-head social-heading">
