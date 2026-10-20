@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VLSI Learning Hub | Learn Digital Design & RTL</title>
-<meta name="description" content="Explore practical Verilog HDL examples, digital circuit simulations, sequential logic, processor blocks and VLSI learning resources.">
+<meta name="description" content="Practical VLSI learning resources for Verilog HDL, Synthesis and Static Timing Analysis, and Standard-Cell Characterization. Explore tutorials, playlists and guided training.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://t-maharshi-sanand-yadav.github.io/VLSI-Learning-Hub/">
 <meta property="og:title" content="VLSI Learning Hub | Digital Design & VLSI Learning">
 <meta property="og:description" content="Practical Verilog examples, interactive digital design labs, Synthesis & STA, and standard-cell characterization learning resources.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://t-maharshi-sanand-yadav.github.io/VLSI-Learning-Hub/">
-<meta name="theme-color" content="#0b1020">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -194,10 +194,6 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 @media(max-width:650px){.playlist-grid{grid-template-columns:1fr}.playlist-heading{align-items:flex-start;flex-direction:column}.playlist-info{padding:15px}}
 
 
-/* Keep the hero band minimal after removing promotional and demo content */
-.hero-compact{padding:0;min-height:0;height:0;overflow:hidden;border:0;background:var(--navy)}
-.hero-compact:after{display:none}
-.hero-compact-inner{display:none}
 
 
 /* Updated homepage expertise categories */
@@ -207,8 +203,15 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 .stat span{max-width:250px;font-size:.82rem;line-height:1.45}
 @media(max-width:600px){.stats{grid-template-columns:1fr;gap:15px}.stat{padding:8px}.stat strong{font-size:1.08rem}.stat span{max-width:100%;font-size:.8rem}}
 
+
+/* Homepage audit polish: remove the retired hero and keep the page hierarchy clear */
+.social-heading h1{margin:0;font-size:clamp(1.8rem,3vw,2.65rem);letter-spacing:-.04em;line-height:1.12;max-width:none}
+.social-showcase{scroll-margin-top:90px}
+.social-hub-card,.playlist-card,.feature,.roadstep,.project{min-width:0}
+a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid #1769d2;outline-offset:3px}
+
 </style>
-<link rel="stylesheet" href="academic.css?v=20261021">
+<link rel="stylesheet" href="academic.css?v=20261021-audit1">
 <style>
 /* Navigation system: dropdowns, keyboard focus and compact mobile menu */
 .topbar{z-index:100!important}.nav{position:relative;min-height:76px!important;gap:20px!important}.navlinks{display:flex;align-items:center;gap:clamp(10px,1.35vw,20px)!important;font-size:.88rem!important}.navlinks>a,.nav-drop{white-space:nowrap}.nav-group{position:relative;display:flex;align-items:center;height:76px}.nav-drop{display:inline-flex;align-items:center;gap:7px;padding:10px 0;border:0;background:transparent;color:inherit;font:inherit;cursor:pointer}.nav-drop span{font-size:.75rem;color:#64748b;transition:transform .18s}.nav-group.open .nav-drop span{transform:rotate(180deg)}.dropdown{position:absolute;top:calc(100% - 5px);left:-16px;min-width:245px;padding:8px;background:#fff;border:1px solid #dbe4f0;border-radius:13px;box-shadow:0 18px 40px #172b4d20;display:none;z-index:110}.dropdown-right{left:auto;right:-10px}.nav-group:hover .dropdown,.nav-group:focus-within .dropdown,.nav-group.open .dropdown{display:block}.dropdown a{display:block;padding:11px 12px;border-radius:8px;color:#172b4d!important;font-weight:700;font-size:.88rem}.dropdown a:hover,.dropdown a:focus{background:#edf4ff;color:#1457ad!important;outline:none}.dropdown small{display:block;margin-top:3px;color:#667792;font-size:.75rem;font-weight:400}.menu-toggle{display:none;border:1px solid #d5dfed;background:#fff;border-radius:9px;width:42px;height:40px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer}.menu-toggle span{display:block;width:18px;height:2px;background:#193252;border-radius:3px}
@@ -235,12 +238,12 @@ footer{background:#f7f9fc;color:#5e6b80;border-top:1px solid #e2e8f0}
 <a href="https://github.com/T-Maharshi-Sanand-Yadav/VLSI-Learning-Hub" target="_blank" rel="noopener noreferrer" class="nav-cta">GitHub ↗</a>
 </div></nav></header>
 <main>
-<section class="hero hero-compact"><div class="wrap hero-compact-inner"></div></section>
+
 <section class="stats-band"><div class="wrap stats"><div class="stat"><strong>Verilog HDL</strong><span>RTL Design &amp; Functional Verification</span></div><div class="stat"><strong>Synthesis &amp; STA</strong><span>Logic Synthesis, SDC &amp; Timing Closure</span></div><div class="stat"><strong>Standard-Cell Characterization</strong><span>Cadence Liberate, Timing Arcs &amp; Liberty Models</span></div></div></section>
 <section class="social-showcase" aria-labelledby="social-showcase-title">
   <div class="wrap">
     <div class="section-head social-heading">
-      <div><p class="kicker">FOLLOW · WATCH · LEARN</p><h2 id="social-showcase-title">Fresh VLSI learning from TMSY.</h2></div>
+      <div><p class="kicker">FOLLOW · WATCH · LEARN</p><h1 id="social-showcase-title">Fresh VLSI learning from TMSY.</h1></div>
       <p>Watch real tutorials from your YouTube channel and explore your Instagram VLSI posts.</p>
     </div>
 
