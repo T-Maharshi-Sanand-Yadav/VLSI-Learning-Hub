@@ -1,6 +1,6 @@
-const repoBase = "https://github.com/T-Maharshi-Sanand-Yadav/Verilog_Codes/blob/main/";
-const rawBase = "https://raw.githubusercontent.com/T-Maharshi-Sanand-Yadav/Verilog_Codes/main/";
-const treeApiUrl = "https://api.github.com/repos/T-Maharshi-Sanand-Yadav/Verilog_Codes/git/trees/main?recursive=1";
+const repoBase = "https://github.com/T-Maharshi-Sanand-Yadav/VLSI-Learning-Hub/blob/main/";
+const rawBase = "https://raw.githubusercontent.com/T-Maharshi-Sanand-Yadav/VLSI-Learning-Hub/main/";
+const treeApiUrl = "https://api.github.com/repos/T-Maharshi-Sanand-Yadav/VLSI-Learning-Hub/git/trees/main?recursive=1";
 
 let fileGroups = {};
 let allSourceFiles = [];
